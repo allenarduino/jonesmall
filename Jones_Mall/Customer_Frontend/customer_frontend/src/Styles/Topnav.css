@@ -1,0 +1,351 @@
+.logo{
+    height: 40px;
+    width:40px;
+    border-radius: 40px;
+    
+}
+
+.mynav{
+    background-color:   rgb(73, 8, 73);
+    padding-left:20px;
+    padding-right: 20px;
+    overflow: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-shadow: 0px 0px 2px;
+    width:100%;
+    flex-direction: row;
+    z-index: 2;
+    position: fixed;
+    margin:0px;
+    top:0;
+    
+}
+
+
+
+@media only screen and (max-width:800px){
+
+    .mynav{
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+.nav-closer{
+    list-style-type: none;
+    margin-top:10px;
+    margin-right: 50px;
+    
+
+}
+
+.nav-items{
+    color:white;
+    display: inline;
+    padding-left: 12px;
+    
+  
+}
+
+.nav-links{
+    text-decoration: none;
+    color:white;
+}
+
+.nav-links:hover{
+    text-decoration: none;
+    color:orangered;
+
+}
+
+
+/*********Phonenav***************/
+.phonenav{
+    background-color:  rgb(73, 8, 73);
+    padding-left:20px;
+    overflow: auto;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-right: 20px;
+    box-shadow: 0px 0px 2px;
+    width:100%;
+    flex-direction: row;
+    z-index: 2;
+    position: fixed;
+    margin:0px;
+    top:0px;
+    
+}
+
+
+.sidedrawer{
+    height: 100vh;
+    background-color: white;
+    top:0;
+    left:0;
+    width:300px;
+    position: fixed;
+    z-index: 2;
+    background-color: rgb(73, 8, 73);
+    transform: translateX(3);
+    transition: transform 0.2s ease-out;
+}
+
+
+@media only screen and (min-width:800px){
+   
+.sidedrawer{
+   display: none;
+  
+} 
+}
+
+
+.drawer-items{
+    margin-top: 100px;
+    list-style-type: none;
+}
+
+.drawer-items li{
+    margin-top: 20px;
+    color:white;
+}
+
+
+.toggle-butn{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 24px;
+    width:30px;
+    background: transparent;
+    border:none;
+    cursor:pointer;
+    padding: 0;
+}
+
+.butn-line{
+    width:30px;
+    height: 2px;
+    background: white;
+}
+
+
+
+
+.closebtn{
+    background-color: rgb(184, 23, 103);
+    color:white;
+    border:2px solid rgb(184, 23, 103);
+    font-size: 30px;
+}
+
+
+.batch-count{
+  color:white;
+  background-color:rgb(184, 23, 103);
+  height: 15px; 
+  width:15px;
+  border-radius: 15px;
+  text-align: center;
+  margin-left: 5px;
+  padding: 4px;
+  
+}
+@media only screen and (max-width:800px){
+
+}
+.empty-batch{
+    display: none;
+}
+
+
+.i{
+    height: 100px;
+    width:200px;
+    margin-top: 300px;
+    border:1px solid black;
+}
+
+.name{
+    margin-top: 20px;
+    color:black;
+    text-align: center;
+}
+
+.info{
+    color:black;
+    text-align: center;
+    font-size: 15px;
+}
+
+.profilebutton1{
+ padding-top:3px;
+ padding-bottom: 3px;
+ padding-left: 3px;
+ padding-right: 3px;
+ border-radius:10px;
+ font-size: 12px;
+ color:white;
+ background-color: rgb(184, 23, 103);
+ border:2px solid rgb(184, 23, 103);
+ align-items: center;
+ justify-content: center;
+
+ 
+ 
+}
+
+.profilebutton2{
+    padding-top:3px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    border-radius:10px;
+    font-size: 12px;
+    color:white;
+    background-color: rgb(184, 23, 103);
+    border:2px solid rgb(184, 23, 103);
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+   
+}
+
+.profilebuttoncontainer{
+    justify-content: space-between;
+
+}
+
+
+/******************Edit profile page*******************************/
+.inputfile1::-webkit-file-upload-button{
+     visibility: hidden;
+}
+
+.inputfile1::before{
+    content: "Choose photo";
+    display: inline-block;
+    border-radius: 10px;
+    border:2px solid rgb(184, 23, 103);
+    outline: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+    color:white;
+    background-color: rgb(184, 23, 103);
+}
+
+.nameinput{
+    width:250px;
+    border: 1px solid whitesmoke;
+    background-color:whitesmoke;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding-bottom:5px;
+    padding-top:5px;
+    padding-left:5px;
+    margin-top:1px;
+}
+
+.namebutton{
+    margin-left: -50px;
+    padding-right: 2px;
+    padding-left:2px;
+    border-radius: 15px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    color:white;
+    position: relative;
+    margin-top: 10px;
+    border:2px solid rgb(184, 23, 103);
+    background-color: rgb(184, 23, 103);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width:400px){
+
+.delbutton{
+    background-color: rgb(184, 23, 103);
+    border:2px solid rgb(184, 23, 103);
+    color:#fff;
+    border-radius: 10px;
+    margin-left: 150px;
+    margin-top: 10px;
+}
+}
+
+
+
+
+
+.logoutbutn{
+    background-color: rgb(184, 23, 103);
+    border: 2px solid rgb(184, 23, 103);
+    border-radius: 20px;
+    margin-top: 100px;
+    color:white;
+    width:300px;
+}
+
+
+
+
+
+
+.side-nav{
+    background-color: rgb(73, 8, 73);
+    height: 100vh;
+    margin:0;
+    overflow: auto;
+    padding-top: 50px;
+    width:25vw;
+    
+    
+}
+
+@media only screen and (max-width:800px){
+
+.side-nav{
+  display: none;
+
+}
+}
+
+
+.add-product{
+    color:white;
+    background-color: rgb(184, 23, 103);
+    border:2px solid rgb(184, 23, 103);
+    border-radius: 5px;
+}
+
+
+
+
+.nav-logoutbutn{
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    margin-top: 70px;
+    margin-bottom: 20px;
+    color:rgb(184, 23, 103)
+    
+}
+

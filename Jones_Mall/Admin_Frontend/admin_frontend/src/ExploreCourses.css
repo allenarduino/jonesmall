@@ -1,0 +1,55 @@
+
+.course-background{
+    background-color: whitesmoke;
+    height: 100vh;
+    margin:0;
+    flex: 1;
+    overflow: auto;
+    padding-top: 100px;
+    
+  }
+  
+  
+  .course-header{
+    
+    overflow: hidden;
+    background-color: white;
+    
+    
+    
+  }
+  
+  .course-img{
+    
+    height: 300px;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+  
+  }
+  
+  .course-footer{
+    height:100px;
+    background-color: white;
+    margin:0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-bottom: 100px;
+    overflow:auto;
+  }
+  
+  .course-name{
+    font-size: 20px;
+    margin-top: 20px;
+    color:#333;
+  }
+
+
+  .enroll{
+    background-color: rgb(184, 23, 103);
+    border:2px solid rgb(184, 23, 103);
+    color:white;
+    border-radius:10px;
+    width:100px;
+  }
