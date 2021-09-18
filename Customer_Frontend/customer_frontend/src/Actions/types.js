@@ -1,8 +1,0 @@
-export const FETCH_PRODUCTS="FETCH_PRODUCTS";
-export const ADD_TO_CART="ADD_TO_CART";
-export const SHOW_CART="SHOW_CART";
-export const DISPLAY_PRODUCT="DISPLAY_PRODUCT";
-export const INCREMENT_QTY="INCREMENT_QTY";
-export const DECREMENT_QTY="DECREMENT_QTY";
-export const DELETE_ITEM="DELETE_ITEM";
-export const UPDATE_PRICE="UPDATE_PRICE";
