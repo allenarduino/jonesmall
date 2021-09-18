@@ -1,0 +1,81 @@
+.home-background{
+    background-image: url("../home1.jpg");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:100vw;
+    overflow: auto;
+}
+
+@media only screen and (max-width:500px){
+    .home-background{
+        background-image: url('../Homeimage.jpeg');
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width:100vw;
+        overflow: auto;
+    }
+}
+
+.background-text1{
+    color:white;
+    margin-top: 200px;
+    font-size: 50px;
+}
+
+
+
+@media only screen and (max-width:768px){
+   
+.background-text1{
+    color:white;
+    margin-top: 200px;
+    font-size: 40px;
+}
+}
+
+.background-text2{
+    color:white;
+    margin-top:20px;
+    font-size: 40px;
+}
+
+
+
+@media only screen and (max-width:500px){
+   
+.background-text2{
+    color:white;
+    margin-top:20px;
+    font-size: 25px;
+}
+
+  
+    }
+
+
+.button-container{
+    margin-top: 100px;
+}
+
+.l-button{
+    margin-left: 20px;
+    background-color: transparent;
+    border: 3px solid white;
+    color:white;
+    width: 100px;
+    border-radius: 5px;
+    
+}
+
+
+.r-button{
+    margin-left: 20px;
+    background-color:rgb(73, 8, 73);
+    border: 3px solid rgb(73, 8, 73);
+    color:white;
+    width: 100px;
+    border-radius: 5px;
+    
+}

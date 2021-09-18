@@ -1,0 +1,77 @@
+.home-background{
+    background-image: url('./home3.jpeg');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:100vw;
+    overflow: auto;
+}
+
+@media only screen and (max-width:500px){
+    .home-background{
+        background-image: url('./home4.jpeg');
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width:100vw;
+        overflow: auto;
+    }
+}
+
+.background-text1{
+    color:white;
+    margin-top: 150px;
+    font-size: 50px;
+}
+
+
+
+@media only screen and (max-width:768px){
+   
+.background-text1{
+    color:white;
+    margin-top: 150px;
+    font-size: 40px;
+}
+}
+
+.background-text2{
+    color:white;
+    margin-top:20px;
+    font-size: 40px;
+}
+
+
+
+@media only screen and (max-width:500px){
+   
+.background-text2{
+    color:white;
+    margin-top:20px;
+    font-size: 25px;
+}
+
+  
+    }
+
+
+
+.l-button{
+    background-color: transparent;
+    border: 3px solid white;
+    color:white;
+    border-radius: 15px;
+    margin-top: 100px;
+    width: 250px;
+    
+}
+
+
+.r-button{
+    margin-left: 20px;
+    background-color:rgb(73, 8, 73);
+    border: 3px solid rgb(73, 8, 73);
+    color:white;
+    width: 100px;
+    
+}
