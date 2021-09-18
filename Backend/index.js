@@ -10,6 +10,12 @@ const morgan = require("morgan");
 const dotenv = require("dotenv");
 dotenv.config();
 
+//importing routers
+const userRoute = require("./routes/userRoute");
+const productRoute = require("./routes/productRoute");
+const adminRoute = require("./routes/adminRoute");
+const categoryRoute = require("./routes/categoryRoute");
+
 // Function to serve all static files
 app.use("/uploads/", express.static("uploads"));
 
@@ -24,6 +30,12 @@ const accessLogStream = fs.createWriteStream(
 );
 // setup the logger
 app.use(morgan("combined", { stream: accessLogStream }));
+
+//calling the routers
+app.use(userRoute);
+app.use(productRoute);
+app.use(adminRoute);
+app.use(categoryRoute);
 
 //connect to mongodb
 mongoose.connect("mongodb://127.0.0.1:27017");
