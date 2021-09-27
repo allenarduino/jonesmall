@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory, Link } from "react-router-dom";
-import { AuthContext } from "../contexts/AuthContextProvider";
+import { AuthContext } from "../../contexts/AuthContextProvider";
 import {
   FormContainer,
   CategoryBackground,
@@ -13,7 +13,7 @@ import {
   ChooseImgBox,
   ImagePreview,
   LoadingButton
-} from "../components/CreateCategoryStyle";
+} from "./styles";
 import { Fade } from "react-reveal";
 const CreateCategory = () => {
   const history = useHistory();
@@ -63,7 +63,7 @@ const CreateCategory = () => {
   };
   return (
     <CategoryBackground>
-      <Fade bottom duration={2000} distance="40px">
+      <Fade bottom duration={900} distance="40px">
         <HeaderText>Create Category</HeaderText>
         <FormContainer>
           <Form onSubmit={create_category}>

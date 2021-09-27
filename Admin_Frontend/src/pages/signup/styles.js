@@ -1,9 +1,6 @@
 import styled from "styled-components";
 
-export const CategoryBackground = styled.div`
-  @media (max-width: ${400}px) {
-    padding-top: 50px;
-  }
+export const LoginBackground = styled.div`
   width: 100vw;
   height: 100vh;
   text-align: center;
@@ -13,14 +10,13 @@ export const CategoryBackground = styled.div`
   padding-top: 100px;
   position: fixed;
   justify-content: center;
-  overflow: auto;
 `;
 export const FormContainer = styled.div`
   @media (max-width: ${400}px) {
     width: 250px;
     padding: 22px 35px 22px 35px;
   }
-  width: 400px;
+  max-width: 300px;
   background: #fff;
   border-radius: 2px;
   padding: 30px 55px 33px 55px;
@@ -45,36 +41,17 @@ export const CenterInput = styled.div`
   justify-content: center;
 `;
 
-export const NameInput = styled.input`
+export const LoginInput = styled.input`
   width: 300px;
   padding-left: 20px;
-  height: 40px;
+  height: 30px;
   margin-top: 20px;
   border-radius: 5px;
   border: 1px solid #3333;
 `;
 
-export const FileInput = styled.input`
-  display: none;
-`;
-
-export const ChooseImgBox = styled.div`
-  border: 1px dotted black;
-  margin-top: 30px;
-  height: 80px;
-  width: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-`;
-
-export const ImagePreview = styled.img`
-  margin-top: 30px;
-  height: 90px;
-  width: 90px;
-  border-radius: 10px;
-  align-self: flex-start;
+export const ErrorMessage = styled.b`
+  color: red;
 `;
 
 export const Button = styled.input`
@@ -82,7 +59,7 @@ export const Button = styled.input`
   padding-left: 20px;
   font-size: 15px;
   font-weight: bold;
-  height: 40px;
+  height: 30px;
   margin-top: 20px;
   border-radius: 5px;
   background-color: rgb(73, 8, 73);
@@ -95,7 +72,7 @@ export const LoadingButton = styled.button`
   padding-left: 20px;
   font-size: 15px;
   font-weight: bold;
-  height: 40px;
+  height: 30px;
   margin-top: 20px;
   border-radius: 5px;
   background-color: rgb(73, 8, 73);

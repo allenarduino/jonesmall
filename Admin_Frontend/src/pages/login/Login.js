@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory, Link } from "react-router-dom";
-import { AuthContext } from "../contexts/AuthContextProvider";
+import { AuthContext } from "../../contexts/AuthContextProvider";
 import { Fade } from "react-reveal";
 
 import {
@@ -13,7 +13,7 @@ import {
   Form,
   ErrorMessage,
   LoadingButton
-} from "../components/LoginStyle";
+} from "./styles";
 
 const Login = () => {
   const history = useHistory();

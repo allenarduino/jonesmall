@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Switch } from "react-router-dom/cjs/react-router-dom.min";
 import DrawerNav from "./components/DrawerNav";
 import { AuthContext } from "./contexts/AuthContextProvider";
-import Login from "./pages/Login";
-import CreateProduct from "./pages/CreateProduct";
-import CreateCategory from "./pages/CreateCategory";
+import Login from "./pages/login/Login";
+import CreateProduct from "./pages/createproduct/CreateProduct";
+import CreateCategory from "./pages/createcategory/CreateCategory";
 
 const App = () => {
   const { auth_state, auth_dispatch } = React.useContext(AuthContext);

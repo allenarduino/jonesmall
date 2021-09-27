@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory, Link } from "react-router-dom";
-import { AuthContext } from "../contexts/AuthContextProvider";
+import { AuthContext } from "../../contexts/AuthContextProvider";
 import {
   FormContainer,
   CategoryBackground,
@@ -15,7 +15,7 @@ import {
   LoadingButton,
   SelectInput,
   DescriptionInput
-} from "../components/CreateProductStyle";
+} from "./styles";
 import { Fade } from "react-reveal";
 const CreateProduct = () => {
   const history = useHistory();
@@ -99,7 +99,7 @@ const CreateProduct = () => {
   }, []);
   return (
     <CategoryBackground>
-      <Fade bottom duration={2000} distance="40px">
+      <Fade bottom duration={900} distance="40px">
         <HeaderText>Create Product</HeaderText>
         <FormContainer>
           <Form onSubmit={create_product}>
