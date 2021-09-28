@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { AuthContext } from "../contexts/AuthContextProvider";
 import { laptop, mobile } from "../responsive";
 import * as Icon from "react-feather";
+import Modal from "react-modal";
 
 const ProductHeader = styled.div`
   overflow: hidden;
@@ -45,22 +46,90 @@ const PriceLabel = styled.div`
   color: #e3405f;
 `;
 
+/***********************Style for modal******************** */
+
+const customStyle = {
+  content: {
+    display: "flex",
+    flexDirection: "column",
+    borderRadius: 20,
+    margin: "100px auto",
+    height: 200,
+    width: 200
+  }
+};
+
+const HeaderText = styled.b`
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+`;
+
+const ModalFooter = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 100px;
+`;
+
+const CancelButton = styled.button`
+  width: 100px;
+  background: #f2f2f2;
+  border: 2px solid #f2f2f2;
+  font-weight: bold;
+  height: 30px;
+  border-radius: 40px;
+`;
+
+const DeleteButton = styled.button`
+  width: 100px;
+  background: #e3405f;
+  border: 2px solid #e3405f;
+  color: #fff;
+  margin-left: 10px;
+  font-weight: bold;
+  height: 30px;
+  border-radius: 40px;
+`;
+
 const ProductCard = ({ product }) => {
   const { auth_state } = React.useContext(AuthContext);
   let url = auth_state.url;
+
+  const [open, setOpen] = React.useState(false);
+  const [selectedId, setSelectedId] = React.useState(0);
+
+  const openModal = id => {
+    setOpen(true);
+  };
+
+  const closeModal = () => {
+    setOpen(false);
+  };
+
   return (
-    <Col xs={6} sm={4} md={4} lg={3} xl={4} style={{ marginTop: 10 }}>
-      <ProductHeader>
-        <Icon.Trash
-          style={{ position: "absolute", color: "#e3405f", margin: 10 }}
-        />
-        <ProductImage src={`${url}/${product.image}`} />
-      </ProductHeader>
-      <ProductFooter>
-        <NameLabel>{product.name}</NameLabel>
-        <PriceLabel>GHC {product.price}</PriceLabel>
-      </ProductFooter>
-    </Col>
+    <>
+      <Col xs={6} sm={4} md={4} lg={3} xl={4} style={{ marginTop: 10 }}>
+        <ProductHeader>
+          <Icon.Trash
+            style={{ position: "absolute", color: "#e3405f", margin: 10 }}
+            onClick={() => openModal()}
+          />
+          <ProductImage src={`${url}/${product.image}`} />
+        </ProductHeader>
+        <ProductFooter>
+          <NameLabel>{product.name}</NameLabel>
+          <PriceLabel>GHC {product.price}</PriceLabel>
+        </ProductFooter>
+      </Col>
+
+      <Modal isOpen={open} style={customStyle} onRequestClose={closeModal}>
+        <HeaderText>Delete Product?</HeaderText>
+        <ModalFooter>
+          <CancelButton onClick={closeModal}>Cancel</CancelButton>
+          <DeleteButton>Delete</DeleteButton>
+        </ModalFooter>
+      </Modal>
+    </>
   );
 };
 

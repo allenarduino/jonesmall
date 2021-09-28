@@ -24,6 +24,49 @@ export const ProductBackground = styled.div`
   ${laptop({ width: "80%", right: 0 })}
 `;
 
+const customStyle = {
+  content: {
+    display: "flex",
+    flexDirection: "column",
+    borderRadius: 20,
+    margin: "100px auto",
+    height: 200,
+    width: 200
+  }
+};
+
+const HeaderText = styled.b`
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+`;
+
+const ModalFooter = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 100px;
+`;
+
+const CancelButton = styled.button`
+  width: 100px;
+  background: #f2f2f2;
+  border: 2px solid #f2f2f2;
+  font-weight: bold;
+  height: 30px;
+  border-radius: 40px;
+`;
+
+const DeleteButton = styled.button`
+  width: 100px;
+  background: #e3405f;
+  border: 2px solid #e3405f;
+  color: #fff;
+  margin-left: 10px;
+  font-weight: bold;
+  height: 30px;
+  border-radius: 40px;
+`;
+
 const Products = () => {
   const { product_state, product_dispatch } = React.useContext(ProductContext);
   const { auth_state } = React.useContext(AuthContext);
@@ -48,15 +91,17 @@ const Products = () => {
   }, []);
 
   return (
-    <ProductBackground>
-      <Fade bottom duration={900} distance="40px">
-        <Row>
-          {product_state.products.map(product => (
-            <ProductCard product={product} />
-          ))}
-        </Row>
-      </Fade>
-    </ProductBackground>
+    <>
+      <ProductBackground>
+        <Fade bottom duration={900} distance="40px">
+          <Row>
+            {product_state.products.map(product => (
+              <ProductCard product={product} />
+            ))}
+          </Row>
+        </Fade>
+      </ProductBackground>
+    </>
   );
 };
 
