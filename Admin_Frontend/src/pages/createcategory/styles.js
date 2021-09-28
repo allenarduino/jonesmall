@@ -1,16 +1,13 @@
 import styled from "styled-components";
 
 export const CategoryBackground = styled.div`
-  @media (max-width: ${400}px) {
-    padding-top: 50px;
-  }
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   text-align: center;
   flex: 1;
   background: #f2f2f2;
-  overflow: flex-wrap;
-  padding-top: 100px;
+  overflow: auto;
+  padding-bottom: 70px;
   position: fixed;
   justify-content: center;
   overflow: auto;
@@ -32,7 +29,11 @@ export const FormContainer = styled.div`
   -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);*/
 `;
 
-export const Form = styled.form``;
+export const Form = styled.form`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+`;
 
 export const HeaderText = styled.h1`
   color: rgb(73, 8, 73);
@@ -46,8 +47,10 @@ export const CenterInput = styled.div`
 `;
 
 export const NameInput = styled.input`
-  width: 300px;
+  width: 80%;
+  max-width: 500px;
   padding-left: 20px;
+  font-size: 20px;
   height: 40px;
   margin-top: 20px;
   border-radius: 5px;
@@ -78,7 +81,8 @@ export const ImagePreview = styled.img`
 `;
 
 export const Button = styled.input`
-  width: 320px;
+  width: 80%;
+  max-width: 500px;
   padding-left: 20px;
   font-size: 15px;
   font-weight: bold;

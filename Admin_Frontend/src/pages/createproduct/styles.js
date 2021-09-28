@@ -1,40 +1,23 @@
 import styled from "styled-components";
 
 export const CategoryBackground = styled.div`
-  @media (max-width: ${400}px) {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   text-align: center;
   flex: 1;
   background: #f2f2f2;
   overflow: auto;
-  padding-top: 40px;
   padding-bottom: 70px;
   position: fixed;
   justify-content: center;
   overflow: auto;
 `;
-export const FormContainer = styled.div`
-  @media (max-width: ${400}px) {
-    width: 250px;
-    padding: 22px 35px 22px 35px;
-  }
-  width: 400px;
-  /*background: #fff;*/
-  border-radius: 2px;
-  padding: 30px 55px 33px 55px;
-  margin: 0 auto;
-  /*box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-  -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-  -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);*/
-`;
 
-export const Form = styled.form``;
+export const Form = styled.form`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+`;
 
 export const HeaderText = styled.h1`
   color: rgb(73, 8, 73);
@@ -48,9 +31,11 @@ export const CenterInput = styled.div`
 `;
 
 export const NameInput = styled.input`
-  width: 300px;
+  width: 80%;
+  max-width: 500px;
   padding-left: 20px;
-  height: 30px;
+  font-size: 20px;
+  height: 40px;
   margin-top: 20px;
   border-radius: 5px;
   border: 1px solid #3333;
@@ -58,17 +43,20 @@ export const NameInput = styled.input`
 
 export const SelectInput = styled.select`
   background: transparent;
-  width: 320px;
-  height: 30px;
+  width: 80%;
+  max-width: 500px;
+  height: 40px;
   border-radius: 5px;
   margin-top: 20px;
 `;
 
 export const DescriptionInput = styled.textarea`
-  width: 300px;
+  width: 80%;
+  max-width: 500px;
   padding-left: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  font-size: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   margin-top: 20px;
   border-radius: 5px;
   border: 1px solid #3333;
@@ -76,12 +64,14 @@ export const DescriptionInput = styled.textarea`
 
 export const FileInput = styled.input`
   display: none;
+  align-self: flex-start;
 `;
 
 export const ChooseImgBox = styled.div`
   border: 1px dotted black;
   margin-top: 30px;
   height: 80px;
+  align-self: center;
   width: 80px;
   display: flex;
   justify-content: center;
@@ -98,11 +88,12 @@ export const ImagePreview = styled.img`
 `;
 
 export const Button = styled.input`
-  width: 320px;
+  width: 80%;
+  max-width: 500px;
   padding-left: 20px;
   font-size: 15px;
   font-weight: bold;
-  height: 30px;
+  height: 40px;
   margin-top: 20px;
   border-radius: 5px;
   background-color: rgb(73, 8, 73);

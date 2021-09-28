@@ -6,6 +6,7 @@ import { AuthContext } from "./contexts/AuthContextProvider";
 import Login from "./pages/login/Login";
 import CreateProduct from "./pages/createproduct/CreateProduct";
 import CreateCategory from "./pages/createcategory/CreateCategory";
+import SideNav from "./components/SideNav";
 
 const App = () => {
   const { auth_state, auth_dispatch } = React.useContext(AuthContext);
@@ -31,6 +32,7 @@ const App = () => {
       <Router>
         <main style={{ flex: 1, height: "100%" }}>
           {auth_state.isLoggedIn ? <DrawerNav /> : <Login />}
+          {auth_state.isLoggedIn ? <SideNav /> : <Login />}
           <Switch>
             <Route exact path="/add_category" component={CreateCategory} />
             <Route path="/add_product" component={CreateProduct} />

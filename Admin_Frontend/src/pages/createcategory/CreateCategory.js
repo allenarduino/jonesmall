@@ -44,7 +44,10 @@ const CreateCategory = () => {
     console.log(categoryImg);
 
     let myHeaders = new Headers();
-    myHeaders.append("x-access-token", auth_state.token);
+    myHeaders.append(
+      "x-access-token",
+      auth_state.token || localStorage.getItem("token")
+    );
     fetch(`${url}/create_category`, {
       method: "POST",
       body: data,
@@ -65,19 +68,18 @@ const CreateCategory = () => {
     <CategoryBackground>
       <Fade bottom duration={900} distance="40px">
         <HeaderText>Create Category</HeaderText>
-        <FormContainer>
-          <Form onSubmit={create_category}>
-            <CenterInput>
-              <NameInput
-                onChange={handle_category_change}
-                required
-                type="text"
-                placeholder="Name of Category"
-                value={category}
-                name="email"
-              />
-            </CenterInput>
-
+        <Form onSubmit={create_category}>
+          <CenterInput>
+            <NameInput
+              onChange={handle_category_change}
+              required
+              type="text"
+              placeholder="Name of Category"
+              value={category}
+              name="email"
+            />
+          </CenterInput>
+          <CenterInput>
             <label>
               <FileInput
                 type="file"
@@ -92,17 +94,17 @@ const CreateCategory = () => {
                 <ImagePreview src={imgPreview} />
               )}
             </label>
+          </CenterInput>
 
-            <CenterInput>
-              {loading ? (
-                <LoadingButton>Loading...</LoadingButton>
-              ) : (
-                <Button value="Submit" type="submit" />
-              )}
-            </CenterInput>
-            <CenterInput></CenterInput>
-          </Form>
-        </FormContainer>
+          <CenterInput>
+            {loading ? (
+              <LoadingButton>Loading...</LoadingButton>
+            ) : (
+              <Button value="Submit" type="submit" />
+            )}
+          </CenterInput>
+          <CenterInput></CenterInput>
+        </Form>
       </Fade>
     </CategoryBackground>
   );

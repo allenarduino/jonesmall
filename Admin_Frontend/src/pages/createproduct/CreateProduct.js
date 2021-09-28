@@ -100,52 +100,53 @@ const CreateProduct = () => {
   return (
     <CategoryBackground>
       <Fade bottom duration={900} distance="40px">
-        <HeaderText>Create Product</HeaderText>
-        <FormContainer>
-          <Form onSubmit={create_product}>
-            <CenterInput>
-              <NameInput
-                onChange={handle_product_change}
-                required
-                type="text"
-                placeholder="Name of Product"
-                value={name}
-                name="name"
-              />
-            </CenterInput>
-            <CenterInput>
-              <NameInput
-                onChange={handle_price}
-                required
-                type="number"
-                placeholder="Price in GHC"
-                value={price}
-                name="price"
-              />
-            </CenterInput>
-            <CenterInput>
-              <SelectInput
-                value={category}
-                name="category"
-                onChange={categoryhandler}
-                required
-              >
-                <option></option>
-                {categories.map(c => (
-                  <option value={c.name}>{c.name}</option>
-                ))}
-              </SelectInput>
-            </CenterInput>
-            <CenterInput>
-              <DescriptionInput
-                placeholder="Description"
-                required
-                value={description}
-                name="description"
-                onChange={handle_description}
-              ></DescriptionInput>
-            </CenterInput>
-
+        <CenterInput>
+          <HeaderText>Create Product</HeaderText>
+        </CenterInput>
+        <Form onSubmit={create_product}>
+          <CenterInput>
+            <NameInput
+              onChange={handle_product_change}
+              required
+              type="text"
+              placeholder="Name of Product"
+              value={name}
+              name="name"
+            />
+          </CenterInput>
+          <CenterInput>
+            <NameInput
+              onChange={handle_price}
+              required
+              type="number"
+              placeholder="Price in GHC"
+              value={price}
+              name="price"
+            />
+          </CenterInput>
+          <CenterInput>
+            <SelectInput
+              value={category}
+              name="category"
+              onChange={categoryhandler}
+              required
+            >
+              <option></option>
+              {categories.map(c => (
+                <option value={c.name}>{c.name}</option>
+              ))}
+            </SelectInput>
+          </CenterInput>
+          <CenterInput>
+            <DescriptionInput
+              placeholder="Description"
+              required
+              value={description}
+              name="description"
+              onChange={handle_description}
+            ></DescriptionInput>
+          </CenterInput>
+          <CenterInput>
             <label>
               <FileInput
                 type="file"
@@ -160,17 +161,17 @@ const CreateProduct = () => {
                 <ImagePreview src={imgPreview} />
               )}
             </label>
+          </CenterInput>
 
-            <CenterInput>
-              {loading ? (
-                <LoadingButton>Loading...</LoadingButton>
-              ) : (
-                <Button value="Submit" type="submit" />
-              )}
-            </CenterInput>
-            <CenterInput></CenterInput>
-          </Form>
-        </FormContainer>
+          <CenterInput>
+            {loading ? (
+              <LoadingButton>Loading...</LoadingButton>
+            ) : (
+              <Button value="Submit" type="submit" />
+            )}
+          </CenterInput>
+          <CenterInput></CenterInput>
+        </Form>
       </Fade>
     </CategoryBackground>
   );
