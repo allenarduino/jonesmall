@@ -86,7 +86,7 @@ const CreateProduct = () => {
       .then(data => {
         controlLoading(false);
         alert(data.message);
-        history.push("/products");
+        history.push("/my_products");
       })
       .catch(err => {
         controlLoading(false);

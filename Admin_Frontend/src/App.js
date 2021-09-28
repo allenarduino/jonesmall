@@ -7,6 +7,7 @@ import Login from "./pages/login/Login";
 import CreateProduct from "./pages/createproduct/CreateProduct";
 import CreateCategory from "./pages/createcategory/CreateCategory";
 import SideNav from "./components/SideNav";
+import Products from "./pages/products/Products";
 
 const App = () => {
   const { auth_state, auth_dispatch } = React.useContext(AuthContext);
@@ -37,6 +38,7 @@ const App = () => {
             <Route exact path="/add_category" component={CreateCategory} />
             <Route path="/add_product" component={CreateProduct} />
             <Route path="/login" component={Login} />
+            <Route path="/my_products" component={Products} />
           </Switch>
         </main>
       </Router>

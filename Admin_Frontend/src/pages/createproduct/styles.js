@@ -102,7 +102,8 @@ export const Button = styled.input`
 `;
 
 export const LoadingButton = styled.button`
-  width: 320px;
+  width: 80%;
+  max-width: 500px;
   padding-left: 20px;
   font-size: 15px;
   font-weight: bold;

@@ -66,7 +66,7 @@ const Login = () => {
 
   return (
     <LoginBackground>
-      <Fade bottom duration={2000} distance="40px">
+      <Fade bottom duration={900} distance="40px">
         <HeaderText>Login Admin</HeaderText>
         <FormContainer>
           <Form onSubmit={login}>

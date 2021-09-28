@@ -3,8 +3,8 @@ import { productReducer } from "../reducers/ProductReducer";
 
 export const ProductContext = React.createContext();
 const initialState = {
-  posts: [],
-  url: "http://localhost:5000/"
+  products: [],
+  url: "http://localhost:5000"
 };
 
 const ProductContextProvider = props => {
