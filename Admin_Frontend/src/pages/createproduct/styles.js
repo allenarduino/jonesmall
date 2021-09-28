@@ -64,14 +64,27 @@ export const DescriptionInput = styled.textarea`
 
 export const FileInput = styled.input`
   display: none;
-  align-self: flex-start;
+  width: 80%;
+  max-width: 500px;
+`;
+
+export const FileLabel = styled.label`
+  max-width: 500px;
+  width: 80%;
 `;
 
 export const ChooseImgBox = styled.div`
-  border: 1px dotted black;
-  margin-top: 30px;
+  border: 1px dotted rgb(73, 8, 73);
   height: 80px;
-  align-self: center;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+`;
+
+export const ImageBox = styled.div`
+  height: 80px;
   width: 80px;
   display: flex;
   justify-content: center;
@@ -80,11 +93,9 @@ export const ChooseImgBox = styled.div`
 `;
 
 export const ImagePreview = styled.img`
-  margin-top: 30px;
-  height: 80px;
-  width: 80px;
+  height: 100%;
+  width: 100%;
   border-radius: 10px;
-  align-self: flex-start;
 `;
 
 export const Button = styled.input`

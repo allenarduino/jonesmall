@@ -59,11 +59,26 @@ export const NameInput = styled.input`
 
 export const FileInput = styled.input`
   display: none;
+  width: 80%;
+  max-width: 500px;
+`;
+
+export const FileLabel = styled.label`
+  width: 80%;
+  max-width: 500px;
 `;
 
 export const ChooseImgBox = styled.div`
-  border: 1px dotted black;
-  margin-top: 30px;
+  border: 1px dotted rgb(73, 8, 73);
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+`;
+
+export const ImageBox = styled.div`
   height: 80px;
   width: 80px;
   display: flex;
@@ -73,11 +88,9 @@ export const ChooseImgBox = styled.div`
 `;
 
 export const ImagePreview = styled.img`
-  margin-top: 30px;
-  height: 90px;
-  width: 90px;
+  height: 100%;
+  width: 100%;
   border-radius: 10px;
-  align-self: flex-start;
 `;
 
 export const Button = styled.input`

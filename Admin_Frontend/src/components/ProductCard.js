@@ -2,6 +2,7 @@ import React from "react";
 import { Col } from "react-grid-system";
 import styled from "styled-components";
 import { AuthContext } from "../contexts/AuthContextProvider";
+import { ProductContext } from "../contexts/ProductContextProvider";
 import { laptop, mobile } from "../responsive";
 import * as Icon from "react-feather";
 import Modal from "react-modal";
@@ -92,6 +93,7 @@ const DeleteButton = styled.button`
 `;
 
 const ProductCard = ({ product }) => {
+  const { product_state, product_dispatch } = React.useContext(ProductContext);
   const { auth_state } = React.useContext(AuthContext);
   let url = auth_state.url;
 
@@ -100,19 +102,24 @@ const ProductCard = ({ product }) => {
 
   const openModal = id => {
     setOpen(true);
+    setSelectedId(id);
   };
 
   const closeModal = () => {
     setOpen(false);
   };
 
+  const deleteProduct = id => {
+    product_dispatch({ type: "DELETE_PRODUCT", payload: id });
+    closeModal();
+  };
   return (
     <>
       <Col xs={6} sm={4} md={4} lg={3} xl={4} style={{ marginTop: 10 }}>
         <ProductHeader>
           <Icon.Trash
             style={{ position: "absolute", color: "#e3405f", margin: 10 }}
-            onClick={() => openModal()}
+            onClick={() => openModal(product._id)}
           />
           <ProductImage src={`${url}/${product.image}`} />
         </ProductHeader>
@@ -126,7 +133,9 @@ const ProductCard = ({ product }) => {
         <HeaderText>Delete Product?</HeaderText>
         <ModalFooter>
           <CancelButton onClick={closeModal}>Cancel</CancelButton>
-          <DeleteButton>Delete</DeleteButton>
+          <DeleteButton onClick={() => deleteProduct(selectedId)}>
+            Delete
+          </DeleteButton>
         </ModalFooter>
       </Modal>
     </>

@@ -1,16 +1,18 @@
 import React from "react";
 import { useHistory, Link } from "react-router-dom";
+import * as Icon from "react-feather";
 import { AuthContext } from "../../contexts/AuthContextProvider";
 import {
-  FormContainer,
   CategoryBackground,
   NameInput,
   Button,
   CenterInput,
   HeaderText,
   Form,
+  FileLabel,
   FileInput,
   ChooseImgBox,
+  ImageBox,
   ImagePreview,
   LoadingButton
 } from "./styles";
@@ -70,6 +72,25 @@ const CreateCategory = () => {
         <HeaderText>Create Category</HeaderText>
         <Form onSubmit={create_category}>
           <CenterInput>
+            <FileLabel>
+              <FileInput
+                type="file"
+                required
+                onChange={handle_category_img_change}
+                accept="image/x-png,image/jpeg,image/jpg"
+              />
+              {categoryImg == null ? (
+                <ChooseImgBox>
+                  <Icon.Image color="rgb(73, 8, 73)" size={40} />
+                </ChooseImgBox>
+              ) : (
+                <ImageBox>
+                  <ImagePreview src={imgPreview} />
+                </ImageBox>
+              )}
+            </FileLabel>
+          </CenterInput>
+          <CenterInput>
             <NameInput
               onChange={handle_category_change}
               required
@@ -79,23 +100,6 @@ const CreateCategory = () => {
               name="email"
             />
           </CenterInput>
-          <CenterInput>
-            <label>
-              <FileInput
-                type="file"
-                required
-                onChange={handle_category_img_change}
-              />
-              {categoryImg == null ? (
-                <ChooseImgBox>
-                  <b>Select Image</b>
-                </ChooseImgBox>
-              ) : (
-                <ImagePreview src={imgPreview} />
-              )}
-            </label>
-          </CenterInput>
-
           <CenterInput>
             {loading ? (
               <LoadingButton>Loading...</LoadingButton>

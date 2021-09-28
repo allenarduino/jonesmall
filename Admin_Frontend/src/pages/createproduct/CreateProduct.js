@@ -1,8 +1,8 @@
 import React from "react";
 import { useHistory, Link } from "react-router-dom";
+import * as Icon from "react-feather";
 import { AuthContext } from "../../contexts/AuthContextProvider";
 import {
-  FormContainer,
   CategoryBackground,
   NameInput,
   Button,
@@ -14,7 +14,9 @@ import {
   ImagePreview,
   LoadingButton,
   SelectInput,
-  DescriptionInput
+  DescriptionInput,
+  FileLabel,
+  ImageBox
 } from "./styles";
 import { Fade } from "react-reveal";
 const CreateProduct = () => {
@@ -105,6 +107,26 @@ const CreateProduct = () => {
         </CenterInput>
         <Form onSubmit={create_product}>
           <CenterInput>
+            <FileLabel>
+              <FileInput
+                type="file"
+                required
+                onChange={handle_product_img_change}
+                accept="image/x-png,image/jpeg,image/jpg"
+              />
+              {productImg == null ? (
+                <ChooseImgBox>
+                  <Icon.Image color="rgb(73, 8, 73)" size={40} />
+                </ChooseImgBox>
+              ) : (
+                <ImageBox>
+                  <ImagePreview src={imgPreview} />
+                </ImageBox>
+              )}
+            </FileLabel>
+          </CenterInput>
+
+          <CenterInput>
             <NameInput
               onChange={handle_product_change}
               required
@@ -145,22 +167,6 @@ const CreateProduct = () => {
               name="description"
               onChange={handle_description}
             ></DescriptionInput>
-          </CenterInput>
-          <CenterInput>
-            <label>
-              <FileInput
-                type="file"
-                required
-                onChange={handle_product_img_change}
-              />
-              {productImg == null ? (
-                <ChooseImgBox>
-                  <b>Select Image</b>
-                </ChooseImgBox>
-              ) : (
-                <ImagePreview src={imgPreview} />
-              )}
-            </label>
           </CenterInput>
 
           <CenterInput>
