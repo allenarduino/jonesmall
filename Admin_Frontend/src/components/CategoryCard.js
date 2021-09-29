@@ -55,7 +55,7 @@ const customStyle = {
 const HeaderText = styled.b`
   text-align: center;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 19px;
 `;
 
 const ModalFooter = styled.div`
