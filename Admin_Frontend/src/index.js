@@ -4,12 +4,15 @@ import "./index.css";
 import App from "./App";
 import AuthContext from "./contexts/AuthContextProvider";
 import ProductContext from "./contexts/ProductContextProvider";
+import CategoryContext from "./contexts/CategoryContextProvider";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <ProductContext>
     <AuthContext>
-      <App />
+      <CategoryContext>
+        <App />
+      </CategoryContext>
     </AuthContext>
   </ProductContext>,
   document.getElementById("root")
