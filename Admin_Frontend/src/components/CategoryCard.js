@@ -133,7 +133,7 @@ const CategoryCard = ({ category }) => {
       </Col>
 
       <Modal isOpen={open} style={customStyle} onRequestClose={closeModal}>
-        <HeaderText>Delete Product?</HeaderText>
+        <HeaderText>Delete Category?</HeaderText>
         <ModalFooter>
           <CancelButton onClick={closeModal}>Cancel</CancelButton>
           <DeleteButton onClick={() => deleteCategory(selectedId)}>
