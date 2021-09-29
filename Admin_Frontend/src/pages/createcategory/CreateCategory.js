@@ -58,8 +58,8 @@ const CreateCategory = () => {
       .then(res => res.json())
       .then(data => {
         controlLoading(false);
-        alert(data.message);
-        history.push("/categories");
+        console.log(data.message);
+        history.push("/my_categories");
       })
       .catch(err => {
         controlLoading(false);

@@ -69,7 +69,7 @@ const SideNav = () => {
       <Link to="/my_products" style={{ textDecoration: "none" }}>
         <List className={classes.listContainer}>My Products</List>
       </Link>
-      <Link to="/categories" style={{ textDecoration: "none" }}>
+      <Link to="/my_categories" style={{ textDecoration: "none" }}>
         <List className={classes.listContainer}>Categories</List>
       </Link>
       <Link to="/manage_orders" style={{ textDecoration: "none" }}>
