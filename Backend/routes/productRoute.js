@@ -23,8 +23,8 @@ router.post("/create_product", type, admin_auth, function(req, res) {
   const name = req.body.name;
   const user_id = req.user_id;
   const price = req.body.price;
+  //Receiving category id from the Frontend
   const category = req.body.category;
-  // const brand = req.body.brand;
   const description = req.body.description;
 
   const newProduct = new Product({
@@ -59,6 +59,14 @@ router.delete("/product/:id", (req, res) => {
       .json({ message: "Product Deleted" })
       .catch(err => res.status(500).json(err))
   );
+});
+
+//For fetching products under a category name
+router.get("/product/:category_id", (req, res) => {
+  Product.find({ category: req.params.category_id })
+    .sort({ date: -1 })
+    .then(products => res.json(products))
+    .catch(err => res.status(500).json(err));
 });
 
 module.exports = router;

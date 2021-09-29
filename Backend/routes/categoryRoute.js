@@ -27,12 +27,10 @@ router.post("/create_category", type, admin_auth, function(req, res) {
     name: name,
     image: target_path
   });
-  newCategory
-    .save()
-    .then(category => {
-      res.status(200).json({ message: "Category Created Sucessfully" });
-    })
-    .catch(err => res.status(500).json(err));
+  newCategory.save().then(category => {
+    console.log(category);
+    res.status(200).json({ message: "Category Created Sucessfully" });
+  });
 });
 
 // For displaying product categories
@@ -45,7 +43,7 @@ router.get("/categories", (req, res) => {
 
 //For deleting a product category
 router.delete("/category/:id", (req, res) => {
-  Product.deleteOne({ _id: req.params.id }).then(categories =>
+  Category.deleteOne({ _id: req.params.id }).then(categories =>
     res
       .json({ message: "Category Deleted" })
       .catch(err => res.status(500).json(err))
