@@ -112,6 +112,18 @@ const ProductCard = ({ product }) => {
   const deleteProduct = id => {
     product_dispatch({ type: "DELETE_PRODUCT", payload: id });
     closeModal();
+    //Sending http DELETE request to server
+    let myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    fetch(`${url}/product/${id}`, {
+      method: "DELETE",
+      headers: myHeaders
+    })
+      .then(res => res.json())
+      .then(data => {
+        // alert(data.message);
+      })
+      .catch(err => console.log(err));
   };
   return (
     <>
