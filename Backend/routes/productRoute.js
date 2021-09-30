@@ -61,7 +61,7 @@ router.delete("/product/:id", (req, res) => {
   );
 });
 
-//For fetching products under a category name
+//For fetching products under a category_id or _id
 router.get("/product/:category_id", (req, res) => {
   Product.find({ category: req.params.category_id })
     .sort({ date: -1 })
