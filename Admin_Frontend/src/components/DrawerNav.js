@@ -170,26 +170,56 @@ const DrawerNav = () => {
           <NameText>Admin</NameText>
         </List>
 
-        <Link to="/my_customers" style={{ textDecoration: "none" }}>
-          <List className={classes.listContainer}>My Customers</List>
+        <Link
+          onClick={handleDrawerClose}
+          to="/my_customers"
+          style={{ textDecoration: "none" }}
+        >
+          <List onClick={handleDrawerClose} className={classes.listContainer}>
+            My Customers
+          </List>
         </Link>
-        <Link to="/my_products" style={{ textDecoration: "none" }}>
-          <List className={classes.listContainer}>My Products</List>
+        <Link
+          onClick={handleDrawerClose}
+          to="/my_products"
+          style={{ textDecoration: "none" }}
+        >
+          <List onClick={handleDrawerClose} className={classes.listContainer}>
+            My Products
+          </List>
         </Link>
-        <Link to="/my_categories" style={{ textDecoration: "none" }}>
+        <Link
+          onClick={handleDrawerClose}
+          to="/my_categories"
+          style={{ textDecoration: "none" }}
+        >
           <List className={classes.listContainer}>Categories</List>
         </Link>
-        <Link to="/manage_orders" style={{ textDecoration: "none" }}>
+        <Link
+          onClick={handleDrawerClose}
+          to="/manage_orders"
+          style={{ textDecoration: "none" }}
+        >
           <List className={classes.listContainer}>Manage Orders</List>
         </Link>
         <List></List>
         <List className={classes.listContainer}>
-          <Button onClick={() => history.push("/add_product")}>
+          <Button
+            onClick={() => {
+              history.push("/add_product");
+              handleDrawerClose();
+            }}
+          >
             Add Product
           </Button>
         </List>
         <List className={classes.listContainer}>
-          <Button onClick={() => history.push("/add_category")}>
+          <Button
+            onClick={() => {
+              history.push("/add_category");
+              handleDrawerClose();
+            }}
+          >
             Add Category
           </Button>
         </List>

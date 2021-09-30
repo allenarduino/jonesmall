@@ -155,7 +155,7 @@ const CreateProduct = () => {
             >
               <option></option>
               {categories.map(c => (
-                <option value={c.name}>{c.name}</option>
+                <option value={c._id}>{c.name}</option>
               ))}
             </SelectInput>
           </CenterInput>

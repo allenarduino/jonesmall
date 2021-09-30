@@ -6,6 +6,7 @@ import { laptop, mobile } from "../responsive";
 import * as Icon from "react-feather";
 import Modal from "react-modal";
 import { CategoryContext } from "../contexts/CategoryContextProvider";
+import { Link, useHistory } from "react-router-dom";
 
 const ProductHeader = styled.div`
   overflow: hidden;
@@ -85,6 +86,7 @@ const DeleteButton = styled.button`
 `;
 
 const CategoryCard = ({ category }) => {
+  const history = useHistory();
   const { category_dispatch } = React.useContext(CategoryContext);
   const { auth_state } = React.useContext(AuthContext);
   let url = auth_state.url;
@@ -119,17 +121,31 @@ const CategoryCard = ({ category }) => {
   };
   return (
     <>
-      <Col xs={6} sm={4} md={4} lg={3} xl={4} style={{ marginTop: 10 }}>
-        <ProductHeader>
-          <DeleteIconContainer>
-            <Icon.Trash
-              style={{ color: "#e3405f", margin: 10 }}
-              onClick={() => openModal(category._id)}
-            />
-          </DeleteIconContainer>
-          <ProductImage src={`${url}/${category.image}`} />
-          <NameLabel>{category.name}</NameLabel>
-        </ProductHeader>
+      <Col
+        onClick={() =>
+          history.push("/single_category", {
+            category_id: category._id
+          })
+        }
+        xs={6}
+        sm={4}
+        md={4}
+        lg={3}
+        xl={4}
+        style={{ marginTop: 10 }}
+      >
+        <Link>
+          <ProductHeader>
+            <DeleteIconContainer>
+              <Icon.Trash
+                style={{ color: "#e3405f", margin: 10 }}
+                onClick={() => openModal(category._id)}
+              />
+            </DeleteIconContainer>
+            <ProductImage src={`${url}/${category.image}`} />
+            <NameLabel>{category.name}</NameLabel>
+          </ProductHeader>
+        </Link>
       </Col>
 
       <Modal isOpen={open} style={customStyle} onRequestClose={closeModal}>

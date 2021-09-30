@@ -34,7 +34,7 @@ const ProductFooter = styled.div`
   -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
   -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
   -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-  ${mobile({ height: 60, borderRadius: 2 })}
+  ${mobile({ height: 60 })}
 `;
 
 const NameLabel = styled.div`
