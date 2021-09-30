@@ -12,11 +12,8 @@ export const LoginBackground = styled.div`
   justify-content: center;
 `;
 export const FormContainer = styled.div`
-  @media (max-width: ${400}px) {
-    width: 250px;
-    padding: 22px 35px 22px 35px;
-  }
-  max-width: 300px;
+  max-width: 350px;
+  width: 60%;
   background: #fff;
   border-radius: 2px;
   padding: 30px 55px 33px 55px;

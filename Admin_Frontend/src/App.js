@@ -36,14 +36,21 @@ const App = () => {
         <main style={{ flex: 1, height: "100%" }}>
           {auth_state.isLoggedIn ? <DrawerNav /> : <Login />}
           {auth_state.isLoggedIn ? <SideNav /> : <Login />}
-          <Switch>
-            <Route exact path="/add_category" component={CreateCategory} />
-            <Route path="/add_product" component={CreateProduct} />
-            <Route path="/login" component={Login} />
-            <Route path="/my_products" component={Products} />
-            <Route path="/my_categories" component={Categories} />
-            <Route path="/single_category" component={SingleCategory} />
-          </Switch>
+          {auth_state.isLoggedIn ? (
+            <Switch>
+              <Route exact path="/add_category" component={CreateCategory} />
+              <Route path="/add_product" component={CreateProduct} />
+              <Route exact path="/" component={CreateProduct} />
+              <Route path="/my_products" component={Products} />
+              <Route path="/my_categories" component={Categories} />
+              <Route path="/single_category" component={SingleCategory} />}
+            </Switch>
+          ) : (
+            <Switch>
+              <Route exact path="/" component={Login} />
+              <Route exact path="/login" component={Login} />
+            </Switch>
+          )}
         </main>
       </Router>
     </div>
