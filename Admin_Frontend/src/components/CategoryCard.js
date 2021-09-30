@@ -121,31 +121,24 @@ const CategoryCard = ({ category }) => {
   };
   return (
     <>
-      <Col
-        onClick={() =>
-          history.push("/single_category", {
-            category_id: category._id
-          })
-        }
-        xs={6}
-        sm={4}
-        md={4}
-        lg={3}
-        xl={4}
-        style={{ marginTop: 10 }}
-      >
-        <Link>
-          <ProductHeader>
-            <DeleteIconContainer>
-              <Icon.Trash
-                style={{ color: "#e3405f", margin: 10 }}
-                onClick={() => openModal(category._id)}
-              />
-            </DeleteIconContainer>
-            <ProductImage src={`${url}/${category.image}`} />
-            <NameLabel>{category.name}</NameLabel>
-          </ProductHeader>
-        </Link>
+      <Col xs={6} sm={4} md={4} lg={3} xl={4} style={{ marginTop: 10 }}>
+        <ProductHeader>
+          <DeleteIconContainer>
+            <Icon.Trash
+              style={{ color: "#e3405f", margin: 10 }}
+              onClick={() => openModal(category._id)}
+            />
+          </DeleteIconContainer>
+          <ProductImage
+            src={`${url}/${category.image}`}
+            onClick={() =>
+              history.push("/single_category", {
+                category_id: category._id
+              })
+            }
+          />
+          <NameLabel>{category.name}</NameLabel>
+        </ProductHeader>
       </Col>
 
       <Modal isOpen={open} style={customStyle} onRequestClose={closeModal}>
