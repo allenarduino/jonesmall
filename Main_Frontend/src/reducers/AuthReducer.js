@@ -17,6 +17,11 @@ export const authReducer = (state, action) => {
         token: null,
         loading: false
       };
+    case "FETCH_USER":
+      return {
+        ...state,
+        user: action.payload
+      };
     default:
       return state;
   }

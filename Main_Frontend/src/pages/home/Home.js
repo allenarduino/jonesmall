@@ -19,7 +19,7 @@ const Home = () => {
     CategoryContext
   );
   const { product_state, product_dispatch } = React.useContext(ProductContext);
-  const { auth_state } = React.useContext(AuthContext);
+  const { auth_state, auth_dispatch } = React.useContext(AuthContext);
   let url = auth_state.url;
 
   const fetch_products = () => {
@@ -50,9 +50,28 @@ const Home = () => {
       .catch(err => console.log(err));
   };
 
+  const fetch_user = () => {
+    let myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append(
+      "x-access-token",
+      auth_state.token || localStorage.getItem("token")
+    );
+    fetch(`${url}/fetch_user`, {
+      method: "GET",
+      headers: myHeaders
+    })
+      .then(res => res.json())
+      .then(data => {
+        auth_dispatch({ type: "FETCH_USER", payload: data });
+      })
+      .catch(err => console.log(err));
+  };
+
   React.useEffect(() => {
     fetch_products();
     fetch_categories();
+    fetch_user();
   }, []);
   return (
     <HomeBackgroundContainer>

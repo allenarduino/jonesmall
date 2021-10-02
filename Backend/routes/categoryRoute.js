@@ -50,4 +50,13 @@ router.delete("/category/:id", (req, res) => {
   );
 });
 
+//For fetching latest categories
+router.get("/latest_categories", (req, res) => {
+  Category.find()
+    .sort({ date: -1 })
+    .limit(3)
+    .then(categories => res.json(categories))
+    .catch(err => res.status(500).json(err));
+});
+
 module.exports = router;

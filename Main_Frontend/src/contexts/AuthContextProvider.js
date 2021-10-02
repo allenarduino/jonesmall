@@ -8,7 +8,8 @@ const initialState = {
   isLoggedIn: false,
   loading: true,
   token: null,
-  url: "http://localhost:5000"
+  url: "http://localhost:5000",
+  user: []
 };
 
 const AuthContextProvider = props => {

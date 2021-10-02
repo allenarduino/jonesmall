@@ -66,7 +66,9 @@ const SideNav = () => {
       ) : null}
       {auth_state.isLoggedIn ? (
         <List className={classes.listContainer}>
-          <NameText>My Name</NameText>
+          {auth_state.user.map(user => (
+            <NameText>{user.name}</NameText>
+          ))}
         </List>
       ) : null}
       <Link to="/" style={{ textDecoration: "none" }}>

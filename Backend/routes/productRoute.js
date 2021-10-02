@@ -69,4 +69,13 @@ router.get("/product/:category_id", (req, res) => {
     .catch(err => res.status(500).json(err));
 });
 
+//For fetching latest products
+router.get("/latest_products", (req, res) => {
+  Product.find()
+    .sort({ date: -1 })
+    .limit(6)
+    .then(products => res.json(products))
+    .catch(err => res.status(500).json(err));
+});
+
 module.exports = router;

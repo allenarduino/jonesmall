@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/user-model");
 const multer = require("multer");
 const path = require("path");
+const user_auth = require("../middlewares/user_auth");
 
 router.post("/register", function(req, res) {
   const name = req.body.name;
@@ -64,6 +65,15 @@ router.post("/login", (req, res) => {
       });
     }
   });
+});
+
+//For fetching user details
+router.get("/fetch_user", user_auth, (req, res) => {
+  const auth_user_id = req.user_id;
+  User.find({ _id: auth_user_id })
+    .sort({ date: -1 })
+    .then(user => res.json(user))
+    .catch(err => res.status(500).json(err));
 });
 
 module.exports = router;
