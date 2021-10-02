@@ -5,13 +5,14 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { useHistory, Link, NavLink } from "react-router-dom";
 import my_avatar from "../images/avatar.jpg";
 import List from "@material-ui/core/List";
+import { AuthContext } from "../contexts/AuthContextProvider";
 
 const NavContainer = styled.div`
   width: 20%;
   margin-top: 15px;
   background-color: white;
   height: 100%;
-  padding-top: 100px;
+  padding-top: 50px;
   position: fixed;
   z-index: 10;
   ${mobile({ display: "none" })}
@@ -55,8 +56,19 @@ const SideNav = () => {
   const history = useHistory();
   const classes = useStyles();
   const theme = useTheme();
+  const { auth_state } = React.useContext(AuthContext);
   return (
     <NavContainer>
+      {auth_state.isLoggedIn ? (
+        <List className={classes.listContainer}>
+          <Avatar src={my_avatar} />
+        </List>
+      ) : null}
+      {auth_state.isLoggedIn ? (
+        <List className={classes.listContainer}>
+          <NameText>My Name</NameText>
+        </List>
+      ) : null}
       <Link to="/" style={{ textDecoration: "none" }}>
         <List className={classes.listContainer}>Home</List>
       </Link>
@@ -70,12 +82,16 @@ const SideNav = () => {
         <List className={classes.listContainer}>My Cart</List>
       </Link>
       <List></List>
-      <List className={classes.listContainer}>
-        <Button onClick={() => history.push("/signup")}>Sign up</Button>
-      </List>
-      <List className={classes.listContainer}>
-        <Button onClick={() => history.push("/login")}>Log in</Button>
-      </List>
+      {!auth_state.isLoggedIn ? (
+        <List className={classes.listContainer}>
+          <Button onClick={() => history.push("/signup")}>Sign up</Button>
+        </List>
+      ) : null}
+      {!auth_state.isLoggedIn ? (
+        <List className={classes.listContainer}>
+          <Button onClick={() => history.push("/login")}>Log in</Button>
+        </List>
+      ) : null}
     </NavContainer>
   );
 };

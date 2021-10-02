@@ -15,6 +15,7 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import { useHistory, Link, NavLink } from "react-router-dom";
 import my_avatar from "../images/avatar.jpg";
+import { AuthContext } from "../contexts/AuthContextProvider";
 const Button = styled.button`
   background-color: rgb(73, 8, 73);
   border: 2px solid rgb(73, 8, 73);
@@ -115,6 +116,8 @@ const DrawerNav = () => {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
+  const { auth_state } = React.useContext(AuthContext);
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -166,6 +169,17 @@ const DrawerNav = () => {
           </IconButton>
         </div>
         <Divider />
+        {auth_state.isLoggedIn ? (
+          <List className={classes.listContainer}>
+            <Avatar src={my_avatar} />
+          </List>
+        ) : null}
+        {auth_state.isLoggedIn ? (
+          <List className={classes.listContainer}>
+            <NameText>My Name</NameText>
+          </List>
+        ) : null}
+
         <Link
           onClick={handleDrawerClose}
           to="/"
@@ -202,26 +216,30 @@ const DrawerNav = () => {
           <List className={classes.listContainer}>My Cart</List>
         </Link>
         <List></List>
-        <List className={classes.listContainer}>
-          <Button
-            onClick={() => {
-              history.push("/signup");
-              handleDrawerClose();
-            }}
-          >
-            Sign up
-          </Button>
-        </List>
-        <List className={classes.listContainer}>
-          <Button
-            onClick={() => {
-              history.push("/login");
-              handleDrawerClose();
-            }}
-          >
-            Log in
-          </Button>
-        </List>
+        {!auth_state.isLoggedIn ? (
+          <List className={classes.listContainer}>
+            <Button
+              onClick={() => {
+                history.push("/signup");
+                handleDrawerClose();
+              }}
+            >
+              Sign up
+            </Button>
+          </List>
+        ) : null}
+        {!auth_state.isLoggedIn ? (
+          <List className={classes.listContainer}>
+            <Button
+              onClick={() => {
+                history.push("/login");
+                handleDrawerClose();
+              }}
+            >
+              Log in
+            </Button>
+          </List>
+        ) : null}
       </Drawer>
       <main
         className={clsx(classes.content, {
