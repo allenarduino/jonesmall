@@ -1,4 +1,4 @@
-# JONES MALL(https://jones-mall.web.app)
+# [JONES MALL](https://jones-mall.web.app)
 
 - Jones Mall is a simple E-commerce or online shopping application.
 - Built with Node and React
