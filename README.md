@@ -7,5 +7,13 @@
 - Context Api used for state management and styled component used for styling
 - An admin of this app can log in, add products,create product categories,delete products,view customers and view orders.
 - A customer can add an item to shopping cart,increaese item,view item,sign up login or place order.
+## Technologies Used:
+### Initially: 
+<code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png"></code>
+<code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/flask/flask.png"></code>
+<code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/mysql/mysql.png"></code>
+<code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png"></code>
+
+
 
 # Coding is fun :)
